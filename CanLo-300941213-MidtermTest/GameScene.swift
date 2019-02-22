@@ -15,6 +15,7 @@ class GameScene: SKScene {
     let screenSize = UIScreen.main.bounds
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
+    var winCheckArray: Array<String> = Array()
     
     var lion:Lion?
     var lion2:Lion?
@@ -180,6 +181,7 @@ class GameScene: SKScene {
             if touchedNode.name == "play" {
                 //Random Number Generated between 1 and 4
                 
+                winCheckArray.removeAll()
                 lion?.removeFromParent()
                 lion2?.removeFromParent()
                 lion3?.removeFromParent()
@@ -206,19 +208,23 @@ class GameScene: SKScene {
                     if (n==1) {
                         switch number {
                             case 1:
-                                    print("Lion")
+                                
+                                    winCheckArray.append("Lion")
                                     lion2!.position = CGPoint(x: -250.0, y: 0.0)
                                     addChild(lion2!)
                             case 2:
-                                    print("Bear")
+                                
+                                    winCheckArray.append("Bear")
                                     bear2!.position = CGPoint(x: -250.0, y: 0.0)
                                     addChild(bear2!)
                             case 3:
-                                    print("Horse")
+                                
+                                    winCheckArray.append("Horse")
                                     horse2!.position = CGPoint(x: -250.0, y: 0.0)
                                     addChild(horse2!)
                             case 4:
-                                    print("Turtle")
+                                
+                                    winCheckArray.append("Turtle")
                                     turtle2!.position = CGPoint(x: -250.0, y: 0.0)
                                     addChild(turtle2!)
 
@@ -231,19 +237,23 @@ class GameScene: SKScene {
                     else if (n==2) {
                         switch number {
                         case 1:
-                                print("Lion")
+                            
+                                winCheckArray.append("Lion")
                                 lion3!.position = CGPoint(x: -80.0, y: 0.0)
                                 addChild(lion3!)
                         case 2:
-                                print("Bear")
+                            
+                                winCheckArray.append("Bear")
                                 bear3!.position = CGPoint(x: -80.0, y: 0.0)
                                 addChild(bear3!)
                         case 3:
-                                print("Horse")
+                            
+                                winCheckArray.append("Horse")
                                 horse3!.position = CGPoint(x: -80.0, y: 0.0)
                                 addChild(horse3!)
                         case 4:
-                                print("Turtle")
+                            
+                                winCheckArray.append("Turtle")
                                 turtle3!.position = CGPoint(x: -80.0, y: 0.0)
                                 addChild(turtle3!)
                         default:
@@ -255,19 +265,23 @@ class GameScene: SKScene {
                     else if (n==3) {
                         switch number {
                         case 1:
-                                print("Lion")
+                            
+                                winCheckArray.append("Lion")
                                 lion4!.position = CGPoint(x: 80.0, y: 0.0)
                                 addChild(lion4!)
                         case 2:
-                                print("Bear")
+                            
+                                winCheckArray.append("Bear")
                                 bear4!.position = CGPoint(x: 80.0, y: 0.0)
                                 addChild(bear4!)
                         case 3:
-                                print("Horse")
+                            
+                                winCheckArray.append("Horse")
                                 horse4!.position = CGPoint(x: 80.0, y: 0.0)
                                 addChild(horse4!)
                         case 4:
-                                print("Turtle")
+                            
+                                winCheckArray.append("Turle")
                                 turtle4!.position = CGPoint(x: 80.0, y: 0.0)
                                 addChild(turtle4!)
                         default:
@@ -279,19 +293,23 @@ class GameScene: SKScene {
                     if (n==4) {
                         switch number {
                         case 1:
-                                print("Lion")
+                            
+                                winCheckArray.append("Lion")
                                 lion5!.position = CGPoint(x: 250.0, y: 0.0)
                                 addChild(lion5!)
                         case 2:
-                                print("Bear")
+                            
+                                winCheckArray.append("Bear")
                                 bear5!.position = CGPoint(x: 250.0, y: 0.0)
                                 addChild(bear5!)
                         case 3:
-                                print("Horse")
+                            
+                                winCheckArray.append("Horse")
                                 horse5!.position = CGPoint(x: 250.0, y: 0.0)
                                 addChild(horse5!)
                         case 4:
-                                print("Turtle")
+                            
+                                winCheckArray.append("Turtle")
                                 turtle5!.position = CGPoint(x: 250.0, y: 0.0)
                                 addChild(turtle5!)
                         default:
@@ -301,6 +319,20 @@ class GameScene: SKScene {
                     }
                     
                 }
+                
+                // check If there is a win condition!
+       
+                print(winCheckArray)
+                
+                if((winCheckArray[0] == winCheckArray[1]) || (winCheckArray[1] == winCheckArray[2]) || (winCheckArray[2] == winCheckArray[3]))
+               
+                {
+                    print("win 2")
+                }
+                else {
+                    return
+                }
+           
                 
 
                 
