@@ -48,10 +48,11 @@ class GameScene: SKScene {
     var lb1 = SKLabelNode(text: "")
     var lb2 = SKLabelNode(text: "")
     var lb3 = SKLabelNode(text: "")
-    var lb4 = SKLabelNode(text: "")
+    var moneyLabel = SKLabelNode(text: "")
     var play = SKLabelNode(text: "Play")
     var status = SKLabelNode(text: "Status")
     var x:Int = 3
+    var ownedMoney:Int = 1000
     
     
     
@@ -119,33 +120,7 @@ class GameScene: SKScene {
         turtle!.position = CGPoint(x: 250.0, y: 0)
         addChild(turtle!)
         
-        
-        lb2.position.x = -80
-        lb2.position.y = 0
-        lb2.fontColor = UIColor.yellow
-        lb2.fontSize = 30.0
-        lb2.zPosition = 5
-        lb2.fontName = "Arial Bold"
-        // score.text = "Your Score is : 0"
-        addChild(lb2)
-        
-        lb3.position.x = 80
-        lb3.position.y = 0
-        lb3.fontColor = UIColor.yellow
-        lb3.fontSize = 30.0
-        lb3.zPosition = 5
-        lb3.fontName = "Arial Bold"
-        // score.text = "Your Score is : 0"
-        addChild(lb3)
-        
-        lb4.position.x = 250
-        lb4.position.y = 0
-        lb4.fontColor = UIColor.yellow
-        lb4.fontSize = 30.0
-        lb4.zPosition = 5
-        lb4.fontName = "Arial Bold"
-        // score.text = "Your Score is : 0"
-        addChild(lb4)
+       
         
         play.name = "play"
         play.position.x = 0
@@ -281,7 +256,7 @@ class GameScene: SKScene {
                                 addChild(horse4!)
                         case 4:
                             
-                                winCheckArray.append("Turle")
+                                winCheckArray.append("Turtle")
                                 turtle4!.position = CGPoint(x: 80.0, y: 0.0)
                                 addChild(turtle4!)
                         default:
@@ -324,10 +299,25 @@ class GameScene: SKScene {
        
                 print(winCheckArray)
                 
-                if((winCheckArray[0] == winCheckArray[1]) || (winCheckArray[1] == winCheckArray[2]) || (winCheckArray[2] == winCheckArray[3]))
+                if((winCheckArray[0] == winCheckArray[1]) && (winCheckArray[1] == winCheckArray[2]) && (winCheckArray[2] == winCheckArray[3]))
+                {
+                   
+                    ownedMoney += 400
+                    print(ownedMoney)
+                }
+                else if(((winCheckArray[0] == winCheckArray[1]) && (winCheckArray[1] == winCheckArray[2])) || ((winCheckArray[1] == winCheckArray[2]) && (winCheckArray[2] == winCheckArray[3])))
+                    
+                {
+                    
+                    ownedMoney += 300
+                    print(ownedMoney)
+                }
+               else if((winCheckArray[0] == winCheckArray[1]) || (winCheckArray[1] == winCheckArray[2]) || (winCheckArray[2] == winCheckArray[3]))
                
                 {
-                    print("win 2")
+                    
+                    ownedMoney += 200
+                    print(ownedMoney)
                 }
                 else {
                     return
