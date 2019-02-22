@@ -36,10 +36,7 @@ class GameObject : SKSpriteNode, GameProtocol {
     func Reset() {
         
     }
-    
-    func CheckBounds() {
-        
-    }
+
     
     func Start() {
         

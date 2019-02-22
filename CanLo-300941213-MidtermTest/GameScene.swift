@@ -16,6 +16,11 @@ class GameScene: SKScene {
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
     
+    var lion:Lion?
+    var bear:Bear?
+    var turtle:Turtle?
+    var horse:Horse?
+    
     var gameOverLabel: SKLabelNode!
     var score = SKLabelNode(text: "Score")
     var lb1 = SKLabelNode(text: "")
@@ -24,6 +29,7 @@ class GameScene: SKScene {
     var lb4 = SKLabelNode(text: "")
     var playAgain = SKLabelNode(text: "Play")
     var status = SKLabelNode(text: "Status")
+    var x:Int = 3
     
     
     
@@ -46,7 +52,7 @@ class GameScene: SKScene {
         status.fontName = "Arial Bold"
         addChild(status)
         
-        
+      /*
         lb1.position.x = -250
         lb1.position.y = 0
         lb1.fontColor = UIColor.yellow
@@ -55,6 +61,24 @@ class GameScene: SKScene {
         lb1.fontName = "Arial Bold"
         // score.text = "Your Score is : 0"
         addChild(lb1)
+ 
+      */
+        lion = Lion()
+        lion!.position = CGPoint(x: -250.0, y: 0)
+        addChild(lion!)
+        
+        bear = Bear()
+        bear!.position = CGPoint(x: -80, y: 0)
+        addChild(bear!)
+        
+        horse = Horse()
+        horse!.position = CGPoint(x: 80, y: 0)
+        addChild(horse!)
+        
+        turtle = Turtle()
+        turtle!.position = CGPoint(x: 250.0, y: 0)
+        addChild(turtle!)
+        
         
         lb2.position.x = -80
         lb2.position.y = 0
@@ -91,6 +115,7 @@ class GameScene: SKScene {
         playAgain.zPosition = 5
         playAgain.fontName = "Arial Bold"
         addChild(playAgain)
+        
         
 
     }

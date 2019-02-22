@@ -17,6 +17,14 @@
 		0A2BB0E1221F6C30009532B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB0DF221F6C30009532B5 /* LaunchScreen.storyboard */; };
 		0A2BB0E9221F6D1D009532B5 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BB0E8221F6D1D009532B5 /* GameObject.swift */; };
 		0A2BB0EB221F6DAA009532B5 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BB0EA221F6DAA009532B5 /* GameProtocol.swift */; };
+		0A2BB0F7221F7E39009532B5 /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BB0F6221F7E39009532B5 /* Lion.swift */; };
+		0A2BB0FC221F8157009532B5 /* bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB0F8221F8156009532B5 /* bear.png */; };
+		0A2BB0FE221F8157009532B5 /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB0FA221F8157009532B5 /* lion.png */; };
+		0A2BB101221F81D3009532B5 /* Bear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BB100221F81D3009532B5 /* Bear.swift */; };
+		0A2BB103221F8208009532B5 /* Turtle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BB102221F8208009532B5 /* Turtle.swift */; };
+		0A2BB105221F822A009532B5 /* Horse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BB104221F822A009532B5 /* Horse.swift */; };
+		0A2BB107221F834B009532B5 /* horse.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB106221F834B009532B5 /* horse.png */; };
+		0A2BB109221F838A009532B5 /* turtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB108221F838A009532B5 /* turtle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +40,14 @@
 		0A2BB0E2221F6C30009532B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A2BB0E8221F6D1D009532B5 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		0A2BB0EA221F6DAA009532B5 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		0A2BB0F6221F7E39009532B5 /* Lion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
+		0A2BB0F8221F8156009532B5 /* bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear.png; sourceTree = "<group>"; };
+		0A2BB0FA221F8157009532B5 /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
+		0A2BB100221F81D3009532B5 /* Bear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bear.swift; sourceTree = "<group>"; };
+		0A2BB102221F8208009532B5 /* Turtle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turtle.swift; sourceTree = "<group>"; };
+		0A2BB104221F822A009532B5 /* Horse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horse.swift; sourceTree = "<group>"; };
+		0A2BB106221F834B009532B5 /* horse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = horse.png; path = ../../../../Downloads/horse.png; sourceTree = "<group>"; };
+		0A2BB108221F838A009532B5 /* turtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turtle.png; path = ../../../../Downloads/turtle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				0A2BB0D0221F6C2E009532B5 /* AppDelegate.swift */,
-				0A2BB0EA221F6DAA009532B5 /* GameProtocol.swift */,
-				0A2BB0E8221F6D1D009532B5 /* GameObject.swift */,
 				0A2BB0D4221F6C2E009532B5 /* Actions.sks */,
 				0A2BB0D6221F6C2E009532B5 /* GameScene.swift */,
 				0A2BB0D2221F6C2E009532B5 /* GameScene.sks */,
@@ -84,6 +98,12 @@
 		0A2BB0EC221F6F49009532B5 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				0A2BB0E8221F6D1D009532B5 /* GameObject.swift */,
+				0A2BB0EA221F6DAA009532B5 /* GameProtocol.swift */,
+				0A2BB0F6221F7E39009532B5 /* Lion.swift */,
+				0A2BB100221F81D3009532B5 /* Bear.swift */,
+				0A2BB102221F8208009532B5 /* Turtle.swift */,
+				0A2BB104221F822A009532B5 /* Horse.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -91,6 +111,10 @@
 		0A2BB0ED221F785C009532B5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0A2BB0F8221F8156009532B5 /* bear.png */,
+				0A2BB0FA221F8157009532B5 /* lion.png */,
+				0A2BB106221F834B009532B5 /* horse.png */,
+				0A2BB108221F838A009532B5 /* turtle.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -154,10 +178,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2BB0DC221F6C2E009532B5 /* Main.storyboard in Resources */,
+				0A2BB107221F834B009532B5 /* horse.png in Resources */,
 				0A2BB0D3221F6C2E009532B5 /* GameScene.sks in Resources */,
 				0A2BB0DE221F6C30009532B5 /* Assets.xcassets in Resources */,
 				0A2BB0E1221F6C30009532B5 /* LaunchScreen.storyboard in Resources */,
+				0A2BB109221F838A009532B5 /* turtle.png in Resources */,
+				0A2BB0FE221F8157009532B5 /* lion.png in Resources */,
 				0A2BB0D5221F6C2E009532B5 /* Actions.sks in Resources */,
+				0A2BB0FC221F8157009532B5 /* bear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,10 +197,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2BB0E9221F6D1D009532B5 /* GameObject.swift in Sources */,
+				0A2BB0F7221F7E39009532B5 /* Lion.swift in Sources */,
 				0A2BB0EB221F6DAA009532B5 /* GameProtocol.swift in Sources */,
 				0A2BB0D7221F6C2E009532B5 /* GameScene.swift in Sources */,
+				0A2BB101221F81D3009532B5 /* Bear.swift in Sources */,
 				0A2BB0D9221F6C2E009532B5 /* GameViewController.swift in Sources */,
+				0A2BB105221F822A009532B5 /* Horse.swift in Sources */,
 				0A2BB0D1221F6C2E009532B5 /* AppDelegate.swift in Sources */,
+				0A2BB103221F8208009532B5 /* Turtle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
