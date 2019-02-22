@@ -111,8 +111,8 @@
 		0A2BB0ED221F785C009532B5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0A2BB0F8221F8156009532B5 /* bear.png */,
 				0A2BB0FA221F8157009532B5 /* lion.png */,
+				0A2BB0F8221F8156009532B5 /* bear.png */,
 				0A2BB106221F834B009532B5 /* horse.png */,
 				0A2BB108221F838A009532B5 /* turtle.png */,
 			);

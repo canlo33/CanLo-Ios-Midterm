@@ -17,9 +17,30 @@ class GameScene: SKScene {
     var screenHeight: CGFloat?
     
     var lion:Lion?
+    var lion2:Lion?
+    var lion3:Lion?
+    var lion4:Lion?
+    var lion5:Lion?
+    
+
     var bear:Bear?
+    var bear2:Bear?
+    var bear3:Bear?
+    var bear4:Bear?
+    var bear5:Bear?
+    
+    
     var turtle:Turtle?
+    var turtle2:Turtle?
+    var turtle3:Turtle?
+    var turtle4:Turtle?
+    var turtle5:Turtle?
+    
     var horse:Horse?
+    var horse2:Horse?
+    var horse3:Horse?
+    var horse4:Horse?
+    var horse5:Horse?
     
     var gameOverLabel: SKLabelNode!
     var score = SKLabelNode(text: "Score")
@@ -27,7 +48,7 @@ class GameScene: SKScene {
     var lb2 = SKLabelNode(text: "")
     var lb3 = SKLabelNode(text: "")
     var lb4 = SKLabelNode(text: "")
-    var playAgain = SKLabelNode(text: "Play")
+    var play = SKLabelNode(text: "Play")
     var status = SKLabelNode(text: "Status")
     var x:Int = 3
     
@@ -35,6 +56,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
 
+        score.name = "score"
         score.position.x = 0
         score.position.y = 450
         score.fontColor = UIColor.yellow
@@ -44,6 +66,7 @@ class GameScene: SKScene {
        // score.text = "Your Score is : 0"
         addChild(score)
         
+        status.name = "status"
         status.position.x = 0
         status.position.y = 300
         status.fontColor = UIColor.red
@@ -64,18 +87,34 @@ class GameScene: SKScene {
  
       */
         lion = Lion()
+        lion2 = Lion()
+        lion3 = Lion()
+        lion4 = Lion()
+        lion5 = Lion()
         lion!.position = CGPoint(x: -250.0, y: 0)
         addChild(lion!)
         
         bear = Bear()
+        bear2 = Bear()
+        bear3 = Bear()
+        bear4 = Bear()
+        bear5 = Bear()
         bear!.position = CGPoint(x: -80, y: 0)
         addChild(bear!)
         
         horse = Horse()
+        horse2 = Horse()
+        horse3 = Horse()
+        horse4 = Horse()
+        horse5 = Horse()
         horse!.position = CGPoint(x: 80, y: 0)
         addChild(horse!)
         
         turtle = Turtle()
+        turtle2 = Turtle()
+        turtle3 = Turtle()
+        turtle4 = Turtle()
+        turtle5 = Turtle()
         turtle!.position = CGPoint(x: 250.0, y: 0)
         addChild(turtle!)
         
@@ -107,14 +146,14 @@ class GameScene: SKScene {
         // score.text = "Your Score is : 0"
         addChild(lb4)
         
-        
-        playAgain.position.x = 0
-        playAgain.position.y = -450
-        playAgain.fontColor = UIColor.red
-        playAgain.fontSize = 30.0
-        playAgain.zPosition = 5
-        playAgain.fontName = "Arial Bold"
-        addChild(playAgain)
+        play.name = "play"
+        play.position.x = 0
+        play.position.y = -450
+        play.fontColor = UIColor.red
+        play.fontSize = 30.0
+        play.zPosition = 5
+        play.fontName = "Arial Bold"
+        addChild(play)
         
         
 
@@ -134,6 +173,142 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for touch in touches {
+            let location = touch.location(in: self)
+            let touchedNode = atPoint(location)
+            if touchedNode.name == "play" {
+                //Random Number Generated between 1 and 4
+                
+                lion?.removeFromParent()
+                lion2?.removeFromParent()
+                lion3?.removeFromParent()
+                lion4?.removeFromParent()
+                lion5?.removeFromParent()
+                bear?.removeFromParent()
+                bear2?.removeFromParent()
+                bear3?.removeFromParent()
+                bear4?.removeFromParent()
+                bear5?.removeFromParent()
+                horse?.removeFromParent()
+                horse2?.removeFromParent()
+                horse3?.removeFromParent()
+                horse4?.removeFromParent()
+                horse5?.removeFromParent()
+                turtle?.removeFromParent()
+                turtle2?.removeFromParent()
+                turtle3?.removeFromParent()
+                turtle4?.removeFromParent()
+                turtle5?.removeFromParent()
+                
+                for n in 1...4 {
+                    let number = Int.random(in: 1 ..< 5)
+                    if (n==1) {
+                        switch number {
+                            case 1:
+                                    print("Lion")
+                                    lion2!.position = CGPoint(x: -250.0, y: 0.0)
+                                    addChild(lion2!)
+                            case 2:
+                                    print("Bear")
+                                    bear2!.position = CGPoint(x: -250.0, y: 0.0)
+                                    addChild(bear2!)
+                            case 3:
+                                    print("Horse")
+                                    horse2!.position = CGPoint(x: -250.0, y: 0.0)
+                                    addChild(horse2!)
+                            case 4:
+                                    print("Turtle")
+                                    turtle2!.position = CGPoint(x: -250.0, y: 0.0)
+                                    addChild(turtle2!)
+
+                        default:
+                            print("Something is Wrong")
+                            
+                        }
+                    }
+                    
+                    else if (n==2) {
+                        switch number {
+                        case 1:
+                                print("Lion")
+                                lion3!.position = CGPoint(x: -80.0, y: 0.0)
+                                addChild(lion3!)
+                        case 2:
+                                print("Bear")
+                                bear3!.position = CGPoint(x: -80.0, y: 0.0)
+                                addChild(bear3!)
+                        case 3:
+                                print("Horse")
+                                horse3!.position = CGPoint(x: -80.0, y: 0.0)
+                                addChild(horse3!)
+                        case 4:
+                                print("Turtle")
+                                turtle3!.position = CGPoint(x: -80.0, y: 0.0)
+                                addChild(turtle3!)
+                        default:
+                            print("Something is Wrong")
+                            
+                        }
+                    }
+                    
+                    else if (n==3) {
+                        switch number {
+                        case 1:
+                                print("Lion")
+                                lion4!.position = CGPoint(x: 80.0, y: 0.0)
+                                addChild(lion4!)
+                        case 2:
+                                print("Bear")
+                                bear4!.position = CGPoint(x: 80.0, y: 0.0)
+                                addChild(bear4!)
+                        case 3:
+                                print("Horse")
+                                horse4!.position = CGPoint(x: 80.0, y: 0.0)
+                                addChild(horse4!)
+                        case 4:
+                                print("Turtle")
+                                turtle4!.position = CGPoint(x: 80.0, y: 0.0)
+                                addChild(turtle4!)
+                        default:
+                            print("Something is Wrong")
+                            
+                        }
+                    }
+                    
+                    if (n==4) {
+                        switch number {
+                        case 1:
+                                print("Lion")
+                                lion5!.position = CGPoint(x: 250.0, y: 0.0)
+                                addChild(lion5!)
+                        case 2:
+                                print("Bear")
+                                bear5!.position = CGPoint(x: 250.0, y: 0.0)
+                                addChild(bear5!)
+                        case 3:
+                                print("Horse")
+                                horse5!.position = CGPoint(x: 250.0, y: 0.0)
+                                addChild(horse5!)
+                        case 4:
+                                print("Turtle")
+                                turtle5!.position = CGPoint(x: 250.0, y: 0.0)
+                                addChild(turtle5!)
+                        default:
+                            print("Something is Wrong")
+                            
+                        }
+                    }
+                    
+                }
+                
+
+                
+                
+                
+            }
+        }
+
 
     }
     
