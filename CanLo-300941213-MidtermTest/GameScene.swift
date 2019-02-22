@@ -43,8 +43,8 @@ class GameScene: SKScene {
     var horse4:Horse?
     var horse5:Horse?
     
-    var gameOverLabel: SKLabelNode!
-    var score = SKLabelNode(text: "Score")
+    var gameOverLabel = SKLabelNode(text: "")
+    var score = SKLabelNode(text: "Money Won")
     var lb1 = SKLabelNode(text: "")
     var lb2 = SKLabelNode(text: "")
     var lb3 = SKLabelNode(text: "")
@@ -62,7 +62,7 @@ class GameScene: SKScene {
         score.position.x = 0
         score.position.y = 450
         score.fontColor = UIColor.yellow
-        score.fontSize = 30.0
+        score.fontSize = 40.0
         score.zPosition = 5
         score.fontName = "Arial Bold"
        // score.text = "Your Score is : 0"
@@ -72,21 +72,23 @@ class GameScene: SKScene {
         status.position.x = 0
         status.position.y = 300
         status.fontColor = UIColor.red
-        status.fontSize = 30.0
+        status.fontSize = 40.0
         status.zPosition = 5
         status.fontName = "Arial Bold"
         status.text = "Total Money : " + String(ownedMoney)
         addChild(status)
         
-      /*
-        moneyLabel.position.x = -250
-        moneyLabel.position.y = 0
-        moneyLabel.fontColor = UIColor.yellow
-        moneyLabel.fontSize = 30.0
-        moneyLabel.zPosition = 5
-        moneyLabel.fontName = "Arial Bold"
-        addChild(moneyLabel)
-    */
+        gameOverLabel.name = "gameOverLabel"
+        gameOverLabel.position.x = 0
+        gameOverLabel.position.y = 0
+        gameOverLabel.fontColor = UIColor.red
+        gameOverLabel.fontSize = 100.0
+        gameOverLabel.zPosition = 5
+        gameOverLabel.fontName = "Arial Bold"
+        
+       
+        
+
       
         lion = Lion()
         lion2 = Lion()
@@ -126,7 +128,7 @@ class GameScene: SKScene {
         play.position.x = 0
         play.position.y = -450
         play.fontColor = UIColor.red
-        play.fontSize = 30.0
+        play.fontSize = 60.0
         play.zPosition = 5
         play.fontName = "Arial Bold"
         addChild(play)
@@ -156,6 +158,7 @@ class GameScene: SKScene {
             if touchedNode.name == "play" {
                 //Random Number Generated between 1 and 4
                 
+                gameOverLabel.removeFromParent()
                 winCheckArray.removeAll()
                 lion?.removeFromParent()
                 lion2?.removeFromParent()
@@ -180,6 +183,15 @@ class GameScene: SKScene {
                 
                 if(ownedMoney < 100) {
                     print("Game Over")
+                    gameOverLabel.name = "gameOverLabel"
+                    gameOverLabel.position.x = 0
+                    gameOverLabel.position.y = 0
+                    gameOverLabel.fontColor = UIColor.white
+                    gameOverLabel.fontSize = 100.0
+                    gameOverLabel.zPosition = 5
+                    gameOverLabel.fontName = "Arial Bold"
+                    gameOverLabel.text = "GAME OVER"
+                    addChild(gameOverLabel)
                 }
                 else {
                 ownedMoney -= 100
@@ -309,7 +321,7 @@ class GameScene: SKScene {
                 {
                    
                     ownedMoney += 400
-                    score.text = "You win : 400 "
+                    score.text = "You won : 400 "
                     print(ownedMoney)
                 }
                 else if(((winCheckArray[0] == winCheckArray[1]) && (winCheckArray[1] == winCheckArray[2])) || ((winCheckArray[1] == winCheckArray[2]) && (winCheckArray[2] == winCheckArray[3])))
@@ -317,26 +329,24 @@ class GameScene: SKScene {
                 {
                     
                     ownedMoney += 300
-                    score.text = "You win : 300 "
+                    score.text = "You won : 300 "
                     print(ownedMoney)
                 }
-               else if((winCheckArray[0] == winCheckArray[1]) || (winCheckArray[1] == winCheckArray[2]) || (winCheckArray[2] == winCheckArray[3]))
+             /*  else if((winCheckArray[0] == winCheckArray[1]) || (winCheckArray[1] == winCheckArray[2]) || (winCheckArray[2] == winCheckArray[3]))
                
                 {
                     
-                    ownedMoney += 200
-                    score.text = "You win : 200 "
+                    //ownedMoney += 200
+                   // score.text = "You won : 200 "
                     print(ownedMoney)
                 }
+             */
                 else {
-                    score.text = "You Lost "
+                    score.text = "You Lost : 200 "
                 }
                 status.text = "Total Money : " + String(ownedMoney)
            
-                
                 }
-                
-                
                 
             }
         }
