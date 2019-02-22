@@ -47,16 +47,27 @@ class GameScene: SKScene {
     var score = SKLabelNode(text: "Money Won")
     var lb1 = SKLabelNode(text: "")
     var lb2 = SKLabelNode(text: "")
-    var lb3 = SKLabelNode(text: "")
+    var quit = SKLabelNode(text: "Exit Game")
     var moneyLabel = SKLabelNode(text: "")
     var play = SKLabelNode(text: "Play")
     var status = SKLabelNode(text: "Status")
     var x:Int = 3
     var ownedMoney:Int = 1000
-    
+    var doubleTab:Bool = false
     
     
     override func didMove(to view: SKView) {
+        
+        do {
+            let sounds:[String] = ["win", "lose"]
+            for sound in sounds {
+                let path:String = Bundle.main.path(forResource: sound, ofType: "mp3")!
+                let url: URL = URL(fileURLWithPath: path)
+                let player:AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
+                player.prepareToPlay()
+            }
+        } catch {
+        }
 
         score.name = "score"
         score.position.x = 0
@@ -126,12 +137,21 @@ class GameScene: SKScene {
         
         play.name = "play"
         play.position.x = 0
-        play.position.y = -450
-        play.fontColor = UIColor.red
+        play.position.y = -300
+        play.fontColor = UIColor.green
         play.fontSize = 60.0
         play.zPosition = 5
         play.fontName = "Arial Bold"
         addChild(play)
+        
+        quit.name = "quit"
+        quit.position.x = 0
+        quit.position.y = -450
+        quit.fontColor = UIColor.red
+        quit.fontSize = 60.0
+        quit.zPosition = 5
+        quit.fontName = "Arial Bold"
+        addChild(quit)
         
         
 
@@ -191,8 +211,23 @@ class GameScene: SKScene {
                     gameOverLabel.zPosition = 5
                     gameOverLabel.fontName = "Arial Bold"
                     gameOverLabel.text = "GAME OVER"
+                    play.text = "Press to Play Again"
                     addChild(gameOverLabel)
+                    
+                   if ((touchedNode.name == "play") && doubleTab) {
+                        
+                        if let gameScene = GameScene(fileNamed: "GameScene") {
+                            gameScene.scaleMode = .aspectFill
+                            view?.presentScene(gameScene)
+                        }
+                        
+                   } else if ((touchedNode.name == "play") && (doubleTab == false) ){
+                        doubleTab = true
+                    }
+                    
+                    
                 }
+                    
                 else {
                 ownedMoney -= 100
                 
@@ -322,6 +357,7 @@ class GameScene: SKScene {
                    
                     ownedMoney += 400
                     score.text = "You won : 400 "
+                    self.run(SKAction.playSoundFileNamed("win", waitForCompletion: false))
                     print(ownedMoney)
                 }
                 else if(((winCheckArray[0] == winCheckArray[1]) && (winCheckArray[1] == winCheckArray[2])) || ((winCheckArray[1] == winCheckArray[2]) && (winCheckArray[2] == winCheckArray[3])))
@@ -330,6 +366,7 @@ class GameScene: SKScene {
                     
                     ownedMoney += 300
                     score.text = "You won : 300 "
+                    self.run(SKAction.playSoundFileNamed("win", waitForCompletion: false))
                     print(ownedMoney)
                 }
              /*  else if((winCheckArray[0] == winCheckArray[1]) || (winCheckArray[1] == winCheckArray[2]) || (winCheckArray[2] == winCheckArray[3]))
@@ -343,11 +380,16 @@ class GameScene: SKScene {
              */
                 else {
                     score.text = "You Lost : 200 "
+                    self.run(SKAction.playSoundFileNamed("lose", waitForCompletion: false))
                 }
                 status.text = "Total Money : " + String(ownedMoney)
            
                 }
                 
+            }
+            else if touchedNode.name == "quit"
+            {
+                exit(0)
             }
         }
 
