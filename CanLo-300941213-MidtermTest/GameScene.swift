@@ -5,81 +5,123 @@
 //  Created by Đậu Thư on 2019-02-21.
 //  Copyright © 2019 Can Lo. All rights reserved.
 //
-
 import SpriteKit
 import GameplayKit
+import UIKit
+import AVFoundation
 
 class GameScene: SKScene {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    let screenSize = UIScreen.main.bounds
+    var screenWidth: CGFloat?
+    var screenHeight: CGFloat?
+    
+    var gameOverLabel: SKLabelNode!
+    var score = SKLabelNode(text: "Score")
+    var lb1 = SKLabelNode(text: "")
+    var lb2 = SKLabelNode(text: "")
+    var lb3 = SKLabelNode(text: "")
+    var lb4 = SKLabelNode(text: "")
+    var playAgain = SKLabelNode(text: "Play")
+    var status = SKLabelNode(text: "Status")
+    
+    
     
     override func didMove(to view: SKView) {
+
+        score.position.x = 0
+        score.position.y = 450
+        score.fontColor = UIColor.yellow
+        score.fontSize = 30.0
+        score.zPosition = 5
+        score.fontName = "Arial Bold"
+       // score.text = "Your Score is : 0"
+        addChild(score)
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        status.position.x = 0
+        status.position.y = 300
+        status.fontColor = UIColor.red
+        status.fontSize = 30.0
+        status.zPosition = 5
+        status.fontName = "Arial Bold"
+        addChild(status)
         
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
         
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
+        lb1.position.x = -250
+        lb1.position.y = 0
+        lb1.fontColor = UIColor.yellow
+        lb1.fontSize = 30.0
+        lb1.zPosition = 5
+        lb1.fontName = "Arial Bold"
+        // score.text = "Your Score is : 0"
+        addChild(lb1)
+        
+        lb2.position.x = -80
+        lb2.position.y = 0
+        lb2.fontColor = UIColor.yellow
+        lb2.fontSize = 30.0
+        lb2.zPosition = 5
+        lb2.fontName = "Arial Bold"
+        // score.text = "Your Score is : 0"
+        addChild(lb2)
+        
+        lb3.position.x = 80
+        lb3.position.y = 0
+        lb3.fontColor = UIColor.yellow
+        lb3.fontSize = 30.0
+        lb3.zPosition = 5
+        lb3.fontName = "Arial Bold"
+        // score.text = "Your Score is : 0"
+        addChild(lb3)
+        
+        lb4.position.x = 250
+        lb4.position.y = 0
+        lb4.fontColor = UIColor.yellow
+        lb4.fontSize = 30.0
+        lb4.zPosition = 5
+        lb4.fontName = "Arial Bold"
+        // score.text = "Your Score is : 0"
+        addChild(lb4)
+        
+        
+        playAgain.position.x = 0
+        playAgain.position.y = -450
+        playAgain.fontColor = UIColor.red
+        playAgain.fontSize = 30.0
+        playAgain.zPosition = 5
+        playAgain.fontName = "Arial Bold"
+        addChild(playAgain)
+        
+
     }
     
     
     func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
+ 
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
+
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+       
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+      
     }
     
     
