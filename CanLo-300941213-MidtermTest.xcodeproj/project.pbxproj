@@ -27,6 +27,8 @@
 		0A2BB109221F838A009532B5 /* turtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BB108221F838A009532B5 /* turtle.png */; };
 		0A6B6EAA2220AB7900D992D5 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A6B6EA92220AB7900D992D5 /* win.mp3 */; };
 		0A70F9772220AFFC0093638A /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A70F9762220AFFC0093638A /* lose.mp3 */; };
+		0A70F9792220B6170093638A /* SplashScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0A70F9782220B6170093638A /* SplashScene.sks */; };
+		0A70F97B2220B62B0093638A /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A70F97A2220B62B0093638A /* SplashScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		0A2BB108221F838A009532B5 /* turtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turtle.png; path = ../../../../Downloads/turtle.png; sourceTree = "<group>"; };
 		0A6B6EA92220AB7900D992D5 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 		0A70F9762220AFFC0093638A /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		0A70F9782220B6170093638A /* SplashScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SplashScene.sks; sourceTree = "<group>"; };
+		0A70F97A2220B62B0093638A /* SplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +95,10 @@
 				0A2BB0D4221F6C2E009532B5 /* Actions.sks */,
 				0A2BB0D6221F6C2E009532B5 /* GameScene.swift */,
 				0A2BB0D2221F6C2E009532B5 /* GameScene.sks */,
-				0A2BB0D8221F6C2E009532B5 /* GameViewController.swift */,
+				0A70F9782220B6170093638A /* SplashScene.sks */,
+				0A70F97A2220B62B0093638A /* SplashScene.swift */,
 				0A2BB0DA221F6C2E009532B5 /* Main.storyboard */,
+				0A2BB0D8221F6C2E009532B5 /* GameViewController.swift */,
 				0A2BB0DD221F6C30009532B5 /* Assets.xcassets */,
 				0A2BB0DF221F6C30009532B5 /* LaunchScreen.storyboard */,
 				0A2BB0E2221F6C30009532B5 /* Info.plist */,
@@ -198,6 +204,7 @@
 				0A2BB0E1221F6C30009532B5 /* LaunchScreen.storyboard in Resources */,
 				0A6B6EAA2220AB7900D992D5 /* win.mp3 in Resources */,
 				0A2BB109221F838A009532B5 /* turtle.png in Resources */,
+				0A70F9792220B6170093638A /* SplashScene.sks in Resources */,
 				0A2BB0FE221F8157009532B5 /* lion.png in Resources */,
 				0A2BB0D5221F6C2E009532B5 /* Actions.sks in Resources */,
 				0A2BB0FC221F8157009532B5 /* bear.png in Resources */,
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2BB0E9221F6D1D009532B5 /* GameObject.swift in Sources */,
+				0A70F97B2220B62B0093638A /* SplashScene.swift in Sources */,
 				0A2BB0F7221F7E39009532B5 /* Lion.swift in Sources */,
 				0A2BB0EB221F6DAA009532B5 /* GameProtocol.swift in Sources */,
 				0A2BB0D7221F6C2E009532B5 /* GameScene.swift in Sources */,
